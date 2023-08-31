@@ -1,9 +1,10 @@
 import React from "react";
-import * as THREE from 'three';
+import * as THREE from "three";
 import * as d3 from "d3-geo";
 import JSJson from "../../../public/js.json";
 import countJson from "../../../public/values_js";
 import Base from "./Base";
+import Mid from "./Mid";
 
 const processing = (oriData, values) => {
   oriData.features.forEach((province) => {
@@ -20,8 +21,7 @@ export default function map({ baseHeight, midHeightScale, topHeightScale, values
   const json = JSJson;
   const cjson = countJson;
   const projection = d3.geoMercator().center(mapCenter).translate([0, 0]);
-	const map = new THREE.Object3D();
-
+  const map = new THREE.Object3D();
 
   processing(json, cjson).features.forEach((element, index) => {
     const province = new THREE.Object3D();
@@ -76,7 +76,11 @@ export default function map({ baseHeight, midHeightScale, topHeightScale, values
 
     map.add(province);
   });
-  return <>
-  <Base blocks={map.children} baseHeight={baseHeight}/>
-  </>;
+  return (
+    <>
+      <Base blocks={map.children} baseHeight={baseHeight} />
+
+      <Mid blocks={map.children} baseHeight={baseHeight} midHeightScale={midHeightScale} />
+    </>
+  );
 }
