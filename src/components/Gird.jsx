@@ -9,7 +9,7 @@ export default function Gird() {
   const T = Math.PI / 2;
 
   useFrame((state) => {
-    const elapsedTime = state.clock.getElapsedTime() / 1;
+    const elapsedTime = state.clock.getElapsedTime() / 2;
     const stage = (elapsedTime / T) % 2;
 
     if (stage < 1)
@@ -32,6 +32,23 @@ export default function Gird() {
         2023年上半年江苏省各市GDP总量 (亿元)
         <meshBasicMaterial color={"#3d3d3d"} />
       </Text3D>
+
+      <Instances position={[0, -0.01, 0]} scale={2}>
+				<planeGeometry args={[0.026, 0.2]} />
+				<meshBasicMaterial color="#999" />
+				{Array.from({ length: 23 }, (_, y) =>
+					Array.from({ length: 23 }, (_, x) => (
+						<group
+							key={x + ':' + y}
+							position={[x * 2 - Math.floor(23 / 2) * 2, -0.01, y * 2 - Math.floor(23 / 2) * 2]}
+						>
+							<Instance rotation={[-Math.PI / 2, 0, 0]} />
+							<Instance rotation={[-Math.PI / 2, 0, Math.PI / 2]} />
+						</group>
+					))
+				)}
+				<gridHelper args={[100, 100, '#bbb', '#bbb']} position={[0, -0.01, 0]} />
+			</Instances>
     </>
   );
 }
