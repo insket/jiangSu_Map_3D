@@ -10,6 +10,7 @@ specifiers:
   '@types/three': 0.152.1
   '@vitejs/plugin-react': ^3.1.0
   babel-plugin-glsl: ^1.0.0
+  d3-geo: ^3.1.0
   postprocessing: ^6.33.0
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -23,6 +24,7 @@ dependencies:
   '@react-three/postprocessing': 2.15.1_356tauq5yid67dcfm5bn6zg4su
   '@types/three': registry.npmmirror.com/@types/three/0.152.1
   babel-plugin-glsl: 1.0.0
+  d3-geo: 3.1.0
   postprocessing: 6.33.0_three@0.153.0
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
@@ -450,6 +452,20 @@ packages:
       yaml: 1.10.2
     dev: false
 
+  /d3-array/3.2.4:
+    resolution: {integrity: sha512-tdQAmyA18i4J7wprpYq8ClcxZy3SC31QMeByyCFyRt7BVHdREQZ5lpzoe5mFEYZUWe+oq8HBvk9JjpibyEV4Jg==}
+    engines: {node: '>=12'}
+    dependencies:
+      internmap: 2.0.3
+    dev: false
+
+  /d3-geo/3.1.0:
+    resolution: {integrity: sha512-JEo5HxXDdDYXCaWdwLRt79y7giK8SbhZJbFWXqbRTolCHFI5jRqteLzCsq51NKbUoX0PjBVSohxrx+NoOUujYA==}
+    engines: {node: '>=12'}
+    dependencies:
+      d3-array: 3.2.4
+    dev: false
+
   /draco3d/1.5.6:
     resolution: {integrity: sha512-+3NaRjWktb5r61ZFoDejlykPEFKT5N/LkbXsaddlw6xNSXBanUYpFc2AXXpbJDilPHazcSreU/DpQIaxfX0NfQ==}
     dev: false
@@ -602,6 +618,11 @@ packages:
 
   /inherits/2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
+    dev: false
+
+  /internmap/2.0.3:
+    resolution: {integrity: sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==}
+    engines: {node: '>=12'}
     dev: false
 
   /is-arrayish/0.2.1:

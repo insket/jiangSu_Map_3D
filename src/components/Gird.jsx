@@ -26,7 +26,7 @@ export default function Gird() {
 
       <Text3D
         font={"./MFTianLiNoncommercial_Regular.json"}
-        position={[-6, 2, -15]}
+        position={[-12, 2, -15]}
         rotation={[-Math.PI * 0.2, 0, 0]}
       >
         2023年上半年江苏省各市GDP总量 (亿元)
