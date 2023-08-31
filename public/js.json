@@ -459,6 +459,7 @@
         "adcode": 320200,
         "name": "无锡市",
         "center": [120.301663, 31.574729],
+        "centroid":[120.182864,31.624824],
         "childrenNum": 7,
         "level": "city",
         "parent": { "adcode": 320000 },

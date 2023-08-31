@@ -5,6 +5,7 @@ import JSJson from "../../../public/js.json";
 import countJson from "../../../public/values_js";
 import Base from "./Base";
 import Mid from "./Mid";
+import Top from "./Top";
 
 const processing = (oriData, values) => {
   oriData.features.forEach((province) => {
@@ -17,7 +18,7 @@ const processing = (oriData, values) => {
   return oriData;
 };
 
-export default function map({ baseHeight, midHeightScale, topHeightScale, values, mapCenter }) {
+export default function map({ baseHeight, midHeightScale, topHeightScale, mapCenter }) {
   const json = JSJson;
   const cjson = countJson;
   const projection = d3.geoMercator().center(mapCenter).translate([0, 0]);
@@ -81,6 +82,13 @@ export default function map({ baseHeight, midHeightScale, topHeightScale, values
       <Base blocks={map.children} baseHeight={baseHeight} />
 
       <Mid blocks={map.children} baseHeight={baseHeight} midHeightScale={midHeightScale} />
+
+      <Top blocks={map.children}
+				baseHeight={baseHeight}
+				midHeightScale={midHeightScale}
+				topHeightScale={topHeightScale}
+        values={countJson}
+				mapCenter={mapCenter} />
     </>
   );
 }

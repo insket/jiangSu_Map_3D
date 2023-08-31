@@ -29,7 +29,7 @@ export default function Gird() {
         position={[-12, 2, -15]}
         rotation={[-Math.PI * 0.2, 0, 0]}
       >
-        2023年上半年江苏省各市GDP总量 (亿元)
+        江苏省市地图3D
         <meshBasicMaterial color={"#3d3d3d"} />
       </Text3D>
 
